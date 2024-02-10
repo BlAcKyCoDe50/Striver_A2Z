@@ -21,8 +21,6 @@ for (int i = 0; i < n; i++)
 
 }
 
-
-
 main(){
 int n;
 cin>>n;
