@@ -19,7 +19,7 @@ int multiplication(int num1,int num2){
     return num1*num2;
 }
 
-void array_insertion(int arr[],int size){
+void array_insertion(vector<int>&arr,int size){
     cout<<"Enter the array elements: ";
     for (int i = 0; i < size; i++)
     {
