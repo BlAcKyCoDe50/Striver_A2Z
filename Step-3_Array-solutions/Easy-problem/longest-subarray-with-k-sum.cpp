@@ -33,12 +33,16 @@ int longestSubarray(vector<int> arr,long k){
         {
          maxLen=i+1;   
         }
-        int rem=sum-k;
+        long long rem=sum-k;
         if(presum.find(rem)!=presum.end()){
             int len=i-presum[rem];
             maxLen=max(maxLen,len);
         }
-        presum[sum]=i;
+        if (presum.find(sum)==presum.end())
+        {
+            presum[sum]=i;
+        }
+        
     }
     return maxLen;   
 }
