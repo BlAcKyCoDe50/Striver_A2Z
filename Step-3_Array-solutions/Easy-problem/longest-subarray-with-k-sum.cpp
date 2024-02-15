@@ -22,29 +22,55 @@ using namespace std;
 
 //Better approach
 
+// int longestSubarray(vector<int> arr,long k){
+//     map<long long,int> presum;
+//     long long sum=0;
+//     int maxLen=0;
+//     for (int i = 0; i < arr.size(); i++)
+//     {
+//         sum=sum+arr[i];
+//         if (sum==k)
+//         {
+//          maxLen=i+1;   
+//         }
+//         long long rem=sum-k;
+//         if(presum.find(rem)!=presum.end()){
+//             int len=i-presum[rem];
+//             maxLen=max(maxLen,len);
+//         }
+//         if (presum.find(sum)==presum.end())
+//         {
+//             presum[sum]=i;
+//         }
+        
+//     }
+//     return maxLen;   
+// }
+
+//optimal approach
+
 int longestSubarray(vector<int> arr,long k){
-    map<long long,int> presum;
-    long long sum=0;
+    int left,right=0;
+    long long sum=arr[0];
     int maxLen=0;
-    for (int i = 0; i < arr.size(); i++)
+    int n=arr.size();
+
+    while (right<n)
     {
-        sum=sum+arr[i];
+        while (left<=right && sum>k)  // jb sum > ho jy or length minus krna ho
+        {
+            sum=sum-arr[left];
+            left++;
+        }
         if (sum==k)
         {
-         maxLen=i+1;   
+            maxLen=max(maxLen,right-left+1);
         }
-        long long rem=sum-k;
-        if(presum.find(rem)!=presum.end()){
-            int len=i-presum[rem];
-            maxLen=max(maxLen,len);
-        }
-        if (presum.find(sum)==presum.end())
-        {
-            presum[sum]=i;
-        }
-        
+        right++;
+        if(right<n) 
+            sum=sum+arr[right];
     }
-    return maxLen;   
+    return maxLen;
 }
 
 
