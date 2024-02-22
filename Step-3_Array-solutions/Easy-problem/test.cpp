@@ -1,46 +1,22 @@
-#include<iostream>
-#include"functions.cpp"
+#include<bits/stdc++.h>
+// #include<functional>
+#include "functions.cpp"
 using namespace std;
-
- void sort012(int a[], int n)
-    {
-        // code here 
-    int low=0,mid=0;
-        int high=n-1;
-        while(mid<=high)
-        {
-            if(a[mid]==0)
-            {
-                swap(a[low],a[mid]);
-                low++;
-                mid++;
-            }
-            else if(a[mid]==1)
-            {
-                mid++;
-            }
-            else
-            {
-                swap(a[mid],a[high]);
-                high--;
-            }
-        }
-}
-
 main(){
 int n;
 cin>>n;
-int arr[n];
-for (int i = 0; i < n; i++)
-{
-        cin>>arr[i];
-}
-sort012(arr,n);
-for (int i = 0; i < n; i++)
-{
-    cout<<arr[i]<<" ";
+vector<int> arr(n);
+array_insertion(arr,n);
+set<int> st;
+cout<<"Ascending Order: ";
+for(auto it: arr){
+    st.insert(it);
 }
 
+for(auto it: st) cout<<it<<" ";
+sort(arr.begin(),arr.end(),greater<int>());
+cout<<"Descending Order: ";
+printArray(arr,n);
 
 return 0;
 }
