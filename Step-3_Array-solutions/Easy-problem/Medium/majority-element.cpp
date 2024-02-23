@@ -46,24 +46,32 @@ using namespace std;
 // }
 
 //optimal approach
-int majorityElement(vector<int> & arr){
+int majorityElement(vector<int> &arr) {
+    int count = 0;
+    int element;
 
-int count=0;
-int ansidx=0;
+    // Find the majority element
+    for (int i = 0; i < arr.size(); i++) {
+        if (count == 0) {
+            count = 1;
+            element = arr[i];
+        } else if (arr[i] == element) {
+            count++;
+        } else {
+            count--;
+        }
+    }
 
-for (int i = 0; i < arr.size(); i++)
-{
-    if (arr[i]==arr[ansidx])
-    {
-        count++;
+    int count1 = 0;
+    for (int i = 0; i < arr.size(); i++) {
+        if (arr[i] == element) {
+            count1++;
+        }
+        if (count1 > (arr.size() / 2)) {
+            return element;
+        }
     }
-    else count--;
-    if(count==0){
-        ansidx=i;
-        count=1;
-    }
-}
-return -1;
+    return -1;
 }
 
 
