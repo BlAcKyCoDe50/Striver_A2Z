@@ -1,18 +1,24 @@
-#include<iostream>
+#include<bits/stdc++.h>
 #include<vector>
 #include "functions.cpp"
 using namespace std;
 
 int removeDuplicates(vector<int>& arr) {
-        int i=0;
-        for(int j=1;j<arr.size();j++){
-            if(arr[j]!=arr[i]){
-                arr[i+1]=arr[j];
-                i++;
-            }
+        int cnt=0;
+        int n=arr.size();
+        set<int>st;
+        for(int i=0;i<arr.size();i++){
+                st.insert(arr[i]);
         }
-        return i;
-}
+        
+        int i=0;
+        for(auto it=st.begin();it!=st.end();it++){
+            arr[i]=*it;
+            cnt++;
+            i++;
+        }
+        return cnt;
+   } 
 
 main(){
 int n;
