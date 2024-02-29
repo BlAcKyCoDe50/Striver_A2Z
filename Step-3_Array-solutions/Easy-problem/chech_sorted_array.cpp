@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-bool isSorted(int arr[],int n){
+bool IsSorted(int arr[],int n){
 bool sorted=true;
 for (int i = 1; i < n; i++)
 {
@@ -26,7 +26,7 @@ for (int i = 0; i < n; i++)
 {
     cin>>arr[i];
 }
-int result=isSorted(arr,n);
+int result=IsSorted(arr,n);
 if (result==1)
 {
     cout<<"Sorted...";
