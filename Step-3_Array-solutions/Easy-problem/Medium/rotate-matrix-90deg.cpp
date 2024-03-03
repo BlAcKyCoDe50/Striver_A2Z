@@ -25,7 +25,6 @@ int rotateMatrix(vector<vector<int>> & arr){
     
 }
 
-
 main(){
     int n;
     cin>>n;
@@ -39,7 +38,6 @@ main(){
         }
     }
 
-    
     cout<<"   "<<endl;
     for (int i = 0; i < n; i++)
     {
