@@ -24,5 +24,3 @@ vector<int> superiorElements(vector<int>&arr) {
  return ans;
 
 }
-
-
