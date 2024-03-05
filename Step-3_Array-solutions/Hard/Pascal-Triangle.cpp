@@ -26,12 +26,30 @@ int nCr(int n,int r){
     return res;
 }
 
+void printNpascal(int n){
+        vector<vector<int>>res(n);
+        for(int i=0;i<n;i++){
+            res[i]=vector<int>(i+1,1);
+            for(int j=1;j<i;j++){
+                res[i][j]=res[i-1][j]+res[i-1][j-1];  //res[upper row][same column]+res[upper row][left column]
+            }
+        }
+        //printing the triangle
+        for(int i=0;i<res.size();i++){
+            for (int j = 0; j < i; j++)
+            {
+                cout<<res[i][j]<<" ";
+            }
+            cout<<endl;   
+        }
+    }
 
 main(){
 int n;
 cin>>n;
-vector<int> arr(n);
+printNpascal(n);
 //In the first type we have rows and columns given, just calculate their nCr.
+
 
 
 return 0;
