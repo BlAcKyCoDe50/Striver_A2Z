@@ -23,7 +23,7 @@ using namespace std;
 
 //***********************optimal approach************
 
-int subarraySum(vector<int>& arr, int s) {
+int subarraySum(vector<int>& arr, int k) {
 
     int n=arr.size();
     int count=0;
@@ -31,12 +31,13 @@ int subarraySum(vector<int>& arr, int s) {
     unordered_map<int,int> mp;
     for (int i = 0; i < n; i++)
     {
-        sum=sum+arr[i];
-        if(sum==s) count++;
-        else if(mp.find(sum-s) != mp.end()){
-                count=count+mp[sum-s];
+        sum=sum+arr[i];   //sum calculate kiya
+        if(sum==k) count++;
+        else if(mp.find(sum-k) != mp.end())
+        {           //agar sum-k ki value map mae h to count mae wo value ka count add kr de
+            count=count+mp[sum-k];  //like mp[sum-k] ka mtlb mp mae jo bhi value h uska count add hoga
         }
-        mp[sum]++;
+        mp[sum]++; //nhi to us sum ko add kr k uska count ya value bdaa de 
     }
     return count;
 
