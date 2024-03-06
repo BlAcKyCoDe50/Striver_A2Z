@@ -26,6 +26,14 @@ int nCr(int n,int r){
     return res;
 }
 
+void printNthRow(int n){
+    for (int i = 1; i < n; i++)
+    {
+        cout<<nCr(n-1,i)<<" ";
+    }
+    
+}
+
 void printNpascal(int n){
         vector<vector<int>>res(n);
         for(int i=0;i<n;i++){
@@ -48,6 +56,9 @@ main(){
 int n;
 cin>>n;
 printNpascal(n);
+cout<<endl;
+cout<<"***************************"<<endl;
+printNthRow(6);
 //In the first type we have rows and columns given, just calculate their nCr.
 
 
