@@ -10,7 +10,7 @@ So there are mainly 3 types of problems in the pascal triangle
  3. Given n,print the entire traingle. (n=5, print the whole traingle)
 */
 
-//So here is the Solution of the first type of Prob.
+//So here is the Solution of the first type of Problem
 
 #include<iostream>
 #include<bits/stdc++.h>
