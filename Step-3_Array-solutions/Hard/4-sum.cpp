@@ -97,8 +97,8 @@ vector<vector<int>> fourSum(vector<int>& arr, int target) {
                 vector<int>temp={arr[i],arr[j],arr[k],arr[l]};
                 ans.push_back(temp);
                 k++,l--;
-                while(k<l && arr[k]==arr[k-1]) k++;
-                while(k<l && arr[l]==arr[l+1]) l--;
+                while(k<l && arr[k]==arr[k-1]) k++; //for skipping the duplicates in the k
+                while(k<l && arr[l]==arr[l+1]) l--; //for skipping the duplicates in the l
 
             }
             else if(sum<target) k++;
