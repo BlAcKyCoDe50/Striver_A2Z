@@ -106,7 +106,7 @@ vector<vector<int>> fourSum(vector<int>& arr, int target) {
         }
         }
         }
-          vector<vector<int>>result(ans.begin(), ans.end());;
+        vector<vector<int>>result(ans.begin(), ans.end());;
         return result;
 }   
 
