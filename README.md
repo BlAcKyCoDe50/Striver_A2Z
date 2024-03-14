@@ -9,4 +9,5 @@ The Striver A2Z DSA sheet is a curated collection of data structures and algorit
 
 ## Repository Structure
 Structure of this repository is same like that in DSA sheet. All the Questions are solved in the different modules or we can say in steps.
+Every Step has a questions of different concepts
 
