@@ -46,7 +46,7 @@ cin>>n;
 vector<int> arr(n);
 vector<int> tr;
 for(int i=0;i<arr.size();i++){
-            tr[i]=arr[i][1];
+            tr[i]=arr[i];
             }
         for(auto it:tr){
             cout<<it;
