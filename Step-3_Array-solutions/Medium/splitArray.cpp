@@ -22,29 +22,22 @@ Thus, the number of valid splits in nums is 2.
 #include<bits/stdc++.h>
 using namespace std;
 
- int waysToSplitArray(vector<int>& arr) {
-        int sum1=0;
-        
-        int cnt=0;
-         
-        for(int i=0;i<arr.size()-2;i++)
-        {
-           int sum2=0;
-            abs(sum1+=arr[i]);
-            cout<<"i: "<<i<<" count "<<cnt<<endl;
-            cout<<"sum1: "<<sum1<<endl;
-            // cout<<"JJJJJJJJJJJ";
-            for(int j=i+1;j<arr.size();j++)
-            {
-                
-                abs(sum2+=arr[j]);
-                //  cout<<"j: "<<j<<" count "<<cnt<<endl;
-                cout<<"sum2: "<<sum2<<endl;
-            }
-            if(sum1>sum2) cnt++;
-        }
-        if(cnt==0) return -1;
-        return cnt;
+ int waysToSplitArray(vector<int>& nums) {
+        long long sum=0;
+    for(int i=0;i<nums.size();i++)
+    {
+    sum+=nums[i];
+    }
+
+    long long lsum=0,count=0;
+    for(int i=0;i<nums.size()-1;i++)
+    { 
+    lsum+=nums[i];
+    sum-=nums[i];
+    if(lsum>=sum) count++;
+
+    }
+    return count;
     }
 
 int main()
