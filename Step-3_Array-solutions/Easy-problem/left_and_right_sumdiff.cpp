@@ -65,6 +65,7 @@ vector<int> leftRightDifference(vector<int>& arr) {
 
 int main(){
     vector<int> arr={10,4,8,3};
+    // cout<<"size: "<<arr.size()<<endl;
     vector<int>ans=leftRightDifference(arr);
     for(int i=0;i<ans.size();i++){
         cout<<ans[i]<<" ";
