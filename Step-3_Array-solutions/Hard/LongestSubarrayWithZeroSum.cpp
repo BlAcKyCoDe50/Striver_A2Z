@@ -49,7 +49,7 @@ int getLongestZeroSumSubarrayLength(vector<int> &arr){
 }
 
 main(){
-int int n;
+int  n;
 cin>>n;
 vector<int> arr(n);
 arr={1,-1,0,0,01};
