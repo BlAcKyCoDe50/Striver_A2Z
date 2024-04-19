@@ -24,12 +24,12 @@ string capitalizeTitle(string title) {
         
         }
     return result;
-
-    }
+}
 
 main(){
 
-str s="capiTalIze tHe titLe";
-
+string s="capiTalIze tHe titLe";
+string res=capitalizeTitle(s);
+cout<<res;
 return 0;
 }
