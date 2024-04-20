@@ -22,23 +22,35 @@ Explanation: 2 does not exist in nums so return -1
 #include<bits/stdc++.h>
 using namespace std;
 
-int search(vector<int>& nums, int target) {
-        int left=0;int right=nums.size()-1;
-        while(left<=right)
-        {
-            int m=left+(right-left)/2;
-            if(nums[m]==target) return m;
-            if(target<nums[m]) right=m-1;
-            else  left=m+1;
-        }
-        return -1;
-    }
+    //  *******iterative************
+// int search(vector<int>& nums, int target) {
+//         int left=0;int right=nums.size()-1;
+//         while(left<=right)
+//         {
+//             int m=left+(right-left)/2;
+//             if(nums[m]==target) return m;
+//             if(target<nums[m]) right=m-1;
+//             else  left=m+1;
+//         }
+//         return -1;
+//     }
+
+// ************Recurion********************
+
+int search(vector<int>& arr, int low,int high,int target)
+{
+    if(low>high) return -1;
+   int mid=(low+high)/2;
+   if(arr[mid] == target) return mid;
+    else if(target>arr[mid]) return search(arr,mid+1,high,target);
+    return search(arr,low,mid-1,target);
+}
 
 main(){
 
     vector<int>arr={-1,0,3,5,9,12};
     int target=9;
-    int res=search(arr,target);
+    int res=search(arr,0,arr.size()-1,target);
     cout<<res;
 
 return 0;
