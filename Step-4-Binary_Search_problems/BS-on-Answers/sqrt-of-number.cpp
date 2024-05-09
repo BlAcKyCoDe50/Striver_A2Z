@@ -37,7 +37,7 @@ int floorSqrt(int n)
         int mid=(low+high)/2;
         if((mid*mid)<=n){
             ans=mid;
-            low=mid+1;
+            low=mid+1;test
         }
         else high=mid-1;
     }
