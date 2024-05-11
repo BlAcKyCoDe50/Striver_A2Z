@@ -23,7 +23,7 @@ Sample Input 2:
 Sample Output 2:
 10
 Explanation of Sample Output 2:
-The square root of the given number 100 is 10.
+The square root of the given number 100 is 10
 
 */
 
