@@ -30,7 +30,7 @@ long long minimalKSum(vector<int>& nums, int k) {
         unordered_set<int> set;
         int cnt=0;
         for(int num:nums){
-            if(!set.contains(num) && num<=k && num>=1)
+            if(set.find(num)==set.end() && num<=k && num>=1)
             {
                 ans=ans-(long)num;
                 cnt++;
@@ -40,7 +40,7 @@ long long minimalKSum(vector<int>& nums, int k) {
         int i=k+1;
         while(cnt>0)
         {
-            if(!set.contains(i)){
+            if(set.find(i)==set.end()){
                 ans=ans+i;
                 cnt--;
             }
