@@ -63,23 +63,22 @@ using namespace std;
 //     return mini;
 //    }
 
-//     bool possible(vector<int>&arr,int day,int m,int k)
-//     {
-//         int cnt=0;
-//         int NoOfB=0;
-//         for(int i=0;i<arr.size();i++)
-//         {
-//             if(arr[i]<day) cnt++;
-//             else
-//             {
-//                 NoOfB+=(cnt/k);
-//                 cnt=0;
-//             }
-//         }
-//         NoOfB+=(cnt/k);
-//         if(NoOfB>=m) return true;
-//         else return false;
-//     }
+//      bool possible(vector<int>& bloomDay, int day, int m, int k){
+    //     int cnt = 0;
+    //     int noOB = 0;
+    //     for(int i = 0; i<bloomDay.size(); i++){
+    //         if(bloomDay[i] <= day){
+    //             cnt++;
+    //         }
+    //         else if(bloomDay[i] > day){
+    //             int num =  cnt/k;
+    //             noOB += num;
+    //             cnt = 0;
+    //         }
+    //     }
+    //     noOB = noOB +  cnt /k;
+    //     return noOB >= m;
+    // }
 //     int minDays(vector<int>& arr, int m, int k) {
 //         int n=arr.size();
 //         int maxii=maxi(arr);
@@ -100,3 +99,48 @@ using namespace std;
 //         return -1; 
 //     }
 // };
+
+//******************************Optimized Solution***************************
+
+
+bool possible(vector<int>& bloomDay, int day, int m, int k){
+        int cnt = 0;
+        int noOB = 0;
+        for(int i = 0; i<bloomDay.size(); i++){
+            if(bloomDay[i] <= day){
+                cnt++;
+            }
+            else if(bloomDay[i] > day){
+                int num =  cnt/k;
+                noOB += num;
+                cnt = 0;
+            }
+        }
+        noOB = noOB +  cnt /k;
+        return noOB >= m;
+    }
+    int minDays(vector<int>& bloomDay, int m, int k) {
+        int maxi = INT_MIN;
+        int mini = INT_MAX;
+        for(int i = 0; i<bloomDay.size(); i++){
+            maxi = max(maxi, bloomDay[i]);
+            mini = min(mini, bloomDay[i]);
+        }
+        long long size = m * 1ll * k * 1ll;
+        if(size > bloomDay.size()){
+            return -1;
+        }
+        int low = mini; int high = maxi;
+        int ans = 0;
+        while(low <= high){
+            int mid = (low+high)/2;
+            if(possible(bloomDay, mid, m, k)==true){
+                ans = mid;
+                high = mid -1 ;
+            }
+            else{
+                low = mid+1;
+            }
+        }
+        return ans;
+    }
