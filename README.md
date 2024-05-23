@@ -7,7 +7,8 @@ Welcome to my daily practice repository for the Striver A2Z DSA sheet! In this r
 
 The Striver A2Z DSA sheet is a curated collection of data structures and algorithms questions created by Striver, a popular educator in the competitive programming community. It covers a wide range of topics, including arrays, linked lists, trees, dynamic programming, and more.
 
-## Repository Structure
+## Repository Structure 
 Structure of this repository is same like that in DSA sheet. All the Questions are solved in the different modules or we can say in steps.
 Every Step has a questions of different concepts
 
+***********************Thank you ***********************
