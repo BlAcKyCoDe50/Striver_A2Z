@@ -87,7 +87,8 @@ main(){
 
 string ss="MCMXCIV";
 Solution s;
-cout<<s.romanToInt(s);
+cout<<s.romanToInt(ss);
+
 
 return 0;
 }
