@@ -120,12 +120,71 @@ Node *insertAtend(Node *head,int k)
 Node *DeleteAthead(Node *head)
 {
     Node *temp=head;
-    head=head->next;
+    head=head->next; //head to aagay bdhaa diya 
     delete temp;
     // head->next->next;
     return head;
 }
 
+Node *insertAtpos(Node *head,int data ,int pos)
+{
+    int cnt=0;
+    Node *temp=head;
+    Node *newnode= new Node(data);
+
+    if(pos==1)
+    {
+        newnode->next=head;
+        head=newnode;
+        return head;
+    }
+
+    for(int i=1;i<pos-1 && temp!=nullptr;i++)
+    {
+        temp=temp->next;
+    }
+
+    if(temp==nullptr)
+    {
+        delete newnode;
+        cout<<"Position out of bounds"<<endl;
+        return head;
+    }
+    // newnode->next=temp->next->next;
+    newnode->next=temp->next;
+    temp->next=newnode;
+    
+    return head;
+}
+
+Node *insertBeforeVal(Node *head,int value,int stopVal)
+{
+    if(head==nullptr) return NULL;
+
+    if(head->data==stopVal)
+    {
+        Node *newel= new Node(value);
+        newel->next=head;
+        head=newel;
+        return head;
+    }
+    
+    Node *temp=head;
+    Node *newval=new Node(value);
+    while(temp->next!=nullptr)
+    {
+        if(temp->next->data==stopVal)
+        {
+            newval->next=temp->next;
+            temp->next=newval;
+            return head;
+        }
+        temp=temp->next;
+    }
+    cout<<"Value not found!!"<<endl;
+    delete newval;
+    return head;
+}
 
 
 main(){
@@ -157,6 +216,16 @@ main(){
     
     cout<<"Deletion At Begin: "<<endl;
     head=DeleteAthead(head);
+    traversal(head);
+    cout<<endl;
+
+    cout<<"Insertion at a specific position: "<<endl;
+    head=insertAtpos(head,20,1);
+    traversal(head);
+    cout<<endl;
+
+    cout<<"Insertion before value: "<<endl;
+    head=insertBeforeVal(head,40,10);
     traversal(head);
 
 
