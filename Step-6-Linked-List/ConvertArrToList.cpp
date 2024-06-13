@@ -28,40 +28,11 @@ Node * ConvertToLL(vector<int>&arr)
     return head;
 }
 
-void travesal(Node* head)
-{
-    
-    Node* temp=head;
-    // cout<<"functions";
-    while(temp!=nullptr)
-    {
-        
-        cout<<temp->data<<" ";
-        temp=temp->next;
-    }
-}
-
-  int LengthofLL(Node *head)
-{
-    int cnt=0;
-    Node *temp=head;
-    while(temp!=NULL)
-    {
-        // cout<<temp->data<<" ";
-        cnt++;
-        temp=temp->next;
-    }
-    return cnt;
-}
-
 main(){
 
     vector<int>arr={10,20,30,40};
     Node *head=ConvertToLL(arr); //this will create the pointer to the node object
     // Node *temp=gh
-    travesal(head);
     cout<<endl;
-    cout<<"Length of the linked list: "<<LengthofLL(head);
-
 return 0;
 }

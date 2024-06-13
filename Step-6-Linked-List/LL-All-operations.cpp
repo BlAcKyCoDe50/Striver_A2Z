@@ -68,6 +68,64 @@ Node * ConvertToLL(vector<int>&arr)
     return head;
 }
 
+Node *DeleteAtK(Node *head,int k)
+{
+    
+    if(k==1)
+    {
+        Node* temp=head;
+        head=head->next;
+        delete temp;
+        return head;
+    }
+    int cnt=1;Node *temp=head;Node* prev=nullptr;
+    while(temp->next!=nullptr)
+    {
+        
+        prev=temp;
+        temp=temp->next;
+        cnt++;
+        
+        if(cnt==k)
+        {
+            prev->next=prev->next->next;
+            delete temp;
+            break;
+        }
+    }
+    return head;
+}
+
+Node *insertAtBegin(Node *head,int k)
+{
+    Node *newEl= new Node(k);
+    newEl->next=head;
+    head=newEl;
+    return head;
+}
+
+Node *insertAtend(Node *head,int k)
+{
+    Node *newEl= new Node(k);
+    Node *temp=head;
+    while(temp->next!=nullptr)
+    {
+        temp=temp->next;
+    }
+    temp->next=newEl;
+    newEl->next=nullptr;
+    return head;
+}
+
+Node *DeleteAthead(Node *head)
+{
+    Node *temp=head;
+    head=head->next;
+    delete temp;
+    // head->next->next;
+    return head;
+}
+
 
 
 main(){
@@ -76,9 +134,31 @@ main(){
     // Node *temp=ghsZ
     traversal(head);
     cout<<endl;
-    cout<<"Length of the linked list: "<<LengthofLL(head);
+    cout<<"Length of the linked list: "<<LengthofLL(head)<<endl;
     deletetail(head);
+    
     cout<<"Linked List after deleting the tail: "<<endl;
     traversal(head);
+    cout<<endl;
+    DeleteAtK(head,2);
+    
+    cout<<"Linked List after deleting at position 2"<<endl;
+    traversal(head);
+    cout<<endl;
+    
+    cout<<"Insertion at begin: "<<endl;
+    head=insertAtBegin(head,0);
+    traversal(head);
+
+    cout<<"Inserting At end: "<<endl;
+    insertAtend(head,100);
+    traversal(head);
+    cout<<endl;
+    
+    cout<<"Deletion At Begin: "<<endl;
+    head=DeleteAthead(head);
+    traversal(head);
+
+
 return 0;
 }
