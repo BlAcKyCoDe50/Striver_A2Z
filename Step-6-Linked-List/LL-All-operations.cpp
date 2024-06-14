@@ -120,7 +120,7 @@ Node *insertAtend(Node *head,int k)
 Node *DeleteAthead(Node *head)
 {
     Node *temp=head;
-    head=head->next; //head to aagay bdhaa diya 
+    head=head->next; //head ko aagay bdhaa diya 
     delete temp;
     // head->next->next;
     return head;
