@@ -169,19 +169,47 @@ Node*deletionAtend(Node *head)
 Node *deletionAtValue(Node *head,int value)
 {
     Node *temp=head;
+    while(temp!=nullptr )
+    {
+       if(temp->data==value)
+       {
+        
+        // if(temp->next==nullptr)
+        // {
+        //     temp->prev->next=nullptr;
+        //     delete temp;
+        //     return head;
+        // }
+        if(temp->next->prev!=nullptr)
+        {
+            cout<<"in the last node"<<endl;
+            temp->next->prev=temp->prev;
+        }
+        
+        if(temp->prev!=nullptr && temp->next!=nullptr)
+        {
+            temp->prev->next=temp->next;
+        }
+        delete temp;
+        return head;
+       }
+       temp=temp->next;
+    }
+    return head;
+}
+
+ void reverse(Node*head)
+{
+    Node *temp=head;
+    while(temp->next!=nullptr) temp=temp->next;
     while(temp!=nullptr)
     {
-        temp=temp->next;
-        if(temp->next->data==value)
-        {
-            temp->next=temp->next->next;
-            temp->next->next->prev=temp;
-            delete temp->next;
-        }
-        return head;
+        cout<<temp->data<<" ";
+        temp=temp->prev;
     }
+} 
 
-}
+
 
 main(){
 
@@ -191,7 +219,7 @@ main(){
     head->next->next= new Node(3);
     head->next->next->prev=head->next;
     head->next->next->next=new Node(4);
-    head->next->next->next->prev=head->next->next->next;
+    head->next->next->next->prev=head->next->next;
 
     traversal(head);
     head=insertAtpos(head,0,3);
@@ -226,6 +254,13 @@ main(){
     traversal(head);
     cout<<endl;
 
-    // cout<<
+    cout<<"Deleting a particular node: ";
+    head=deletionAtValue(head,2);
+    traversal(head);
+    cout<<endl;
+
+    cout<<"reversal of the Linked list: ";
+    reverse(head);
+    
 return 0;
 }
