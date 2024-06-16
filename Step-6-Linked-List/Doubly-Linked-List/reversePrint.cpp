@@ -12,35 +12,16 @@ class Node{
     }
 };
 
- Node * reverse(Node*head)
+ void reverse(Node*head)
 {
     Node *temp=head;
-    stack<int> st;
-    while(temp!=nullptr)
-    {
-        st.push(temp->data);
-        temp=temp->next;
-    }
-    temp=head;
-
-    while(temp!=nullptr)
-    {
-        temp->data=st.top();
-        st.pop();
-        temp=temp->next;
-    }
-    return head;
-} 
-
-void traversal(Node *head)
-{
-    Node *temp=head;
+    while(temp->next!=nullptr) temp=temp->next;
     while(temp!=nullptr)
     {
         cout<<temp->data<<" ";
-        temp=temp->next;
+        temp=temp->prev;
     }
-}
+} 
 
 
 main(){
@@ -55,13 +36,7 @@ main(){
     head->next->next->next=new Node(4);
     head->next->next->next->prev=head->next->next;
 
-    cout<<"Original Linked list: ";
-    traversal(head);
-    // head=reverse(head);
-    cout<<endl;
-    cout<<"reversal of the Linked list: ";
-    head=reverse(head);
-    traversal(head);
+    reverse(head);
 
 return 0;
 }

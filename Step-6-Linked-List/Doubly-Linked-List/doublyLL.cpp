@@ -198,7 +198,7 @@ Node *deletionAtValue(Node *head,int value)
     return head;
 }
 
- void reverse(Node*head)
+ void reversePrint(Node*head)
 {
     Node *temp=head;
     while(temp->next!=nullptr) temp=temp->next;
@@ -209,6 +209,25 @@ Node *deletionAtValue(Node *head,int value)
     }
 } 
 
+Node * reverseLL(Node*head)
+{
+    Node *temp=head;
+    stack<int> st;
+    while(temp!=nullptr)
+    {
+        st.push(temp->data);
+        temp=temp->next;
+    }
+    temp=head;
+
+    while(temp!=nullptr)
+    {
+        temp->data=st.top();
+        st.pop();
+        temp=temp->next;
+    }
+    return head;
+} 
 
 
 main(){
@@ -259,8 +278,10 @@ main(){
     traversal(head);
     cout<<endl;
 
-    cout<<"reversal of the Linked list: ";
-    reverse(head);
-    
+    cout<<"reversed  the Linked list: ";
+    // reversePrint(head);
+   head= reverseLL(head);
+   traversal(head);
+
 return 0;
 }
