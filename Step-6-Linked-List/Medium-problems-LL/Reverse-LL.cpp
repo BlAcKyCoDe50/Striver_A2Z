@@ -25,25 +25,58 @@ class Node
     }
 };
 
+// ******************brute force****************
+
+// Node* reverseList(Node* head) 
+//     {
+//          stack<int>st;
+//          Node *temp=head;
+//          while(temp!=nullptr)
+//          {
+//             st.push(temp->data);
+//             temp=temp->next;
+//          }
+//         temp=head;
+//         while(temp!=nullptr)
+//         {
+//             temp->data=st.top();
+//             st.pop();
+//             temp=temp->next;
+//         }
+//         return head;  
+//     }
+
+//****************Optimal approach************ */
+
+// Node *reverseList(Node *head)
+// {
+//     Node*slow=head;
+//     Node *fast=head;
+
+//     while(fast!=nullptr || fast->next!=nullptr)
+//     {   
+//         slow=slow->next;
+//         fast=fast->next;
+//     }
+//     return head;
+// }
+
+// *********optimal 2*************
+
 Node* reverseList(Node* head) 
     {
-         stack<int>st;
-         Node *temp=head;
-         while(temp!=nullptr)
-         {
-            st.push(temp->data);
-            temp=temp->next;
-         }
-        temp=head;
+        Node *temp=head;
+        Node *prev=nullptr;
+        Node *front;
         while(temp!=nullptr)
         {
-            temp->data=st.top();
-            st.pop();
-            temp=temp->next;
+            front=temp->next;
+            temp->next=prev;
+            prev=temp;
+            temp=front;
         }
-        return head;  
+        return prev;  
     }
-
 main(){
 
     Node*head=new Node(1);
@@ -51,7 +84,6 @@ main(){
     head->next->next=new Node(3);
 
     head=reverseList(head);
-    
 
 return 0;
 }

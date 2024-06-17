@@ -16,6 +16,17 @@ class Node{
 {
     Node *temp=head;
     stack<int> st;
+// ************brute force*******************
+
+/*
+
+1.create stack\
+2. traverse the linked list and push the nodes into the stack
+3. point temp again to the head
+4. now again traverse the linked list and pop the elements and assigns
+them to the current temp node data part.
+
+*/
     while(temp!=nullptr)
     {
         st.push(temp->data);
@@ -39,6 +50,23 @@ void traversal(Node *head)
     {
         cout<<temp->data<<" ";
         temp=temp->next;
+    }
+
+// ***************optimal approach***********************
+
+// while(temp!=nullptr)
+// {
+    
+// }
+}
+
+void traversal(Node *head)
+{
+    Node *temp=head;
+    while(temp!=nullptr)
+    {
+        cout<<temp->data<<" ";
+        temp=temp=temp->next;
     }
 }
 
