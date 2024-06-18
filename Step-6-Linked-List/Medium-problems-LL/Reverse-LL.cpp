@@ -63,27 +63,49 @@ class Node
 
 // *********optimal 2*************
 
+// Node* reverseList(Node* head) 
+//     {
+//         Node *temp=head;
+//         Node *prev=nullptr;
+//         Node *front;
+//         while(temp!=nullptr)    
+//         {
+//             front=temp->next;
+//             temp->next=prev;
+//             prev=temp;
+//             temp=front;
+//         }
+//         return prev;  
+//     }
+
+//*****************optimal 3 ********************** */
+
 Node* reverseList(Node* head) 
     {
-        Node *temp=head;
-        Node *prev=nullptr;
-        Node *front;
-        while(temp!=nullptr)
-        {
-            front=temp->next;
-            temp->next=prev;
-            prev=temp;
-            temp=front;
-        }
-        return prev;  
+        if(head==nullptr || head->next==nullptr) return head;
+
+        Node *newhead=reverseList(head->next);
+        cout<<"execute"<<endl;
+        Node *front=head->next;
+        front->next=head;
+        head->next=nullptr;
+        return newhead;  
     }
+void traverse(Node *head)
+{
+    Node*temp=head;
+    while(temp!=nullptr){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+}
 main(){
 
     Node*head=new Node(1);
     head->next=new Node(2);
     head->next->next=new Node(3);
-
     head=reverseList(head);
+    traverse(head);
 
-return 0;
+return 0; 
 }

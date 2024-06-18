@@ -59,5 +59,6 @@ main(){
     head->next->next=new Node(3);
 
     head=middleNode(head);
+    cout<<head->data;
 return 0;
 }
