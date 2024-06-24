@@ -6,6 +6,7 @@ public:
 int data; Node *next;
 Node(int data1){
 data=data1;
+next=nullptr;
 }
 };
 
@@ -62,17 +63,28 @@ data=data1;
 
         left=sortList(left);
         right=sortList(right);
-        cout<<"left: "<<left->data<<endl;
-        cout<<"right: "<<right->data<<endl;
+        // cout<<"left: "<<left->data<<endl;
+        // cout<<"right: "</<right->data<<endl;
         return mergeTwoLists(left,right);    
     }
 
+void traversal(Node *head)
+{
+    Node *temp=head;
+    while(temp!=nullptr)
+      {  
+        cout<<temp->data<<" ";
+        temp=temp->next;
+      }
+}
 
 
 main(){
-Node*head=new Node(1);
+Node*head=new Node(3);
 head->next=new Node(2);
-head->next->next=new Node(3);
-
+head->next->next=new Node(1);
+head->next->next->next=new Node(4);
+head=sortList(head);
+traversal(head);
 return 0;
 }
