@@ -76,12 +76,12 @@
 
 // **********Optimal************************
 
-ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) 
+Node *getIntersectionNode(Node *headA, Node *headB) 
     {
        if(headA==nullptr || headB==nullptr) return nullptr;
 
-        ListNode *t1=headA;
-        ListNode *t2= headB;
+        Node *t1=headA;
+        Node *t2= headB;
 
         while(t1!=t2)
         {
