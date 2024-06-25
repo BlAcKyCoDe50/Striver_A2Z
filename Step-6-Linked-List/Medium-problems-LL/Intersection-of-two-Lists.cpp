@@ -33,47 +33,68 @@
 // *************************brute force**********************
 
 
- Node *getIntersectionNode(Node *headA, Node *headB) 
-    {
-        Node *t1=headA;
-        Node *t2=headB;
-        int n1=0;int n2=0;
-        while(t1!=nullptr)
-        {
-            n1++;
-            t1=t1->next;
-        }
+//  Node *getIntersectionNode(Node *headA, Node *headB) 
+//     {
+//         Node *t1=headA;
+//         Node *t2=headB;
+//         int n1=0;int n2=0;
+//         while(t1!=nullptr)
+//         {
+//             n1++;
+//             t1=t1->next;
+//         }
 
-        while(t2!=nullptr)
-        {
-            n2++;
-            t2=t2->next;
-        }
-        t1=headA;t2=headB;
-        int d=0;
-        if(n1>n2) d=n1-n2;
-        else if(n1<n2) d=n2-n1;
-        else d=0;
+//         while(t2!=nullptr)
+//         {
+//             n2++;
+//             t2=t2->next;
+//         }
+//         t1=headA;t2=headB;
+//         int d=0;
+//         if(n1>n2) d=n1-n2;
+//         else if(n1<n2) d=n2-n1;
+//         else d=0;
 
-        if(n1>n2)
-        {
-            while(d--) t1=t1->next;
-        }
-        else if(n2>n1)
-        {
-            while(d--) t2=t2->next;
-        }
+//         if(n1>n2)
+//         {
+//             while(d--) t1=t1->next;
+//         }
+//         else if(n2>n1)
+//         {
+//             while(d--) t2=t2->next;
+//         }
         
-        while(t1!=nullptr && t2!=nullptr)
+//         while(t1!=nullptr && t2!=nullptr)
+//         {
+//             if(t1==t2) return t1;
+//             t1=t1->next;
+//             t2=t2->next;
+//         }
+//         return  nullptr;
+//     }
+
+
+// **********Optimal************************
+
+ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) 
+    {
+       if(headA==nullptr || headB==nullptr) return nullptr;
+
+        ListNode *t1=headA;
+        ListNode *t2= headB;
+
+        while(t1!=t2)
         {
-            if(t1==t2) return t1;
             t1=t1->next;
             t2=t2->next;
+
+            if(t1==t2) return t1;
+
+            if(t1==nullptr) t1=headB;
+            if(t2==nullptr) t2=headA;
         }
-        return  nullptr;
+        return t1;
     }
-
-
 
  Node *insertion(Node *head,int data)
  {
