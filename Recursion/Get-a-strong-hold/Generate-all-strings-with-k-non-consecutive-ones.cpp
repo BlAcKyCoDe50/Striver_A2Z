@@ -3,7 +3,8 @@
 #include <string>
 using namespace std;
 
-void print(int K, string str, vector<string>& arr) {
+void print(int K, string str, vector<string>& arr) 
+{
     if (K == 0) {
         arr.push_back(str);
         return;
@@ -33,7 +34,7 @@ vector<string> generateString(int N, vector<string>& arr) {
 }
 
 int main() {
-    int K = 4;
+    int K = 3;
 
     vector<string> arr;
     arr = generateString(K, arr);
