@@ -26,7 +26,7 @@ void print(int K, string str, vector<string>& arr)
 
 vector<string> generateString(int N, vector<string>& arr) {
     if (N <= 0) return arr;  
-    
+        
     print(N - 1, "0", arr);
     print(N - 1, "1", arr);
 
