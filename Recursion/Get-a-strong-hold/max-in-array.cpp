@@ -13,8 +13,7 @@
 
 main(){
  vector<int> arr={1,2,3,4,5};
-
  cout<<maxel(arr,0);
- 
+
  return 0;
- }
+ } 
