@@ -4,18 +4,22 @@
 
     void generateStrings(string str , int start, int end)
     {
-        if(end==str.length()) return;
+        if(start==str.length()) return;
 
-        if(start<=end) cout<<str.substr(start , end-start+1)<<endl; 
-
-        generateStrings(str, start, end+1);
-
-        if(start==0) generateStrings(str, start+1 , start+1);
+        if(end==str.length()) 
+        {
+        generateStrings(str, start+1, start+1);    
+        return;
+        }
+        
+        cout<<str.substr(start,end-start+1)<<endl;
+        
+        generateStrings(str, start , end+1);
     }
 
 main(){
  
-string str = "abc";
+string str = "gfg";
     generateStrings(str, 0 , 0);
  return 0;
  }
