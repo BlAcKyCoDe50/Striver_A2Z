@@ -12,7 +12,8 @@ we have to print the subsets where the sum is equal to the given sum
     {
         
         if(i==n)
-        {
+        { 
+            
             if(s==sum)
             {
                 for(auto it:ds) cout<<it<<" ";
