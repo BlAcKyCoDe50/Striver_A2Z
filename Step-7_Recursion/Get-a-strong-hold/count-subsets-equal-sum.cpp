@@ -26,8 +26,8 @@ main(){
  int arr[] = {2, 5, 1, 4, 3};
  
  int sum = 10;
-
- cout<<countS(arr,n,sum);
+cout<<3%4;
+//  cout<<countS(arr,nṇ,sum);
 
  return 0;
  }
