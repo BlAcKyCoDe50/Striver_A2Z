@@ -37,33 +37,33 @@ class Node{
 
 //************Optimal Approach**************** */
 
-ListNode* reverseList(ListNode* head) {
+Node* reverseList(Node* head) {
     if (head == nullptr || head->next == nullptr) return head;
 
-    ListNode* newhead = reverseList(head->next);
-    ListNode* front = head->next;
+    Node* newhead = reverseList(head->next);
+    Node* front = head->next;
     front->next = head;
     head->next = nullptr;
     return newhead;
 }
 
-bool isPalindrome(ListNode* head) {
+bool isPalindrome(Node* head) {
     if (head == nullptr || head->next == nullptr) return true;
 
     // Find the middle of the linked list
-    ListNode* slow = head;
-    ListNode* fast = head;
+    Node* slow = head;
+    Node* fast = head;
     while (fast != nullptr && fast->next != nullptr) {
         slow = slow->next;
         fast = fast->next->next;
     }
 
     // Reverse the second half of the linked list
-    ListNode* secondHalfStart = reverseList(slow);
-    ListNode* firstHalfStart = head;
+    Node* secondHalfStart = reverseList(slow);  
+    Node* firstHalfStart = head;
 
     // Compare the first and second half
-    ListNode* secondHalfCopy = secondHalfStart;
+    Node* secondHalfCopy = secondHalfStart;
     while (secondHalfStart != nullptr) {
         if (firstHalfStart->val != secondHalfStart->val) {
             // Reverse the second half back before returning false
