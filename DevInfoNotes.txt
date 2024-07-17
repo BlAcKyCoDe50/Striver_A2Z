@@ -1,0 +1,15 @@
+1. size_t = If you want to create a variable that should not take any negative 
+values, you can use size_t because it is an 
+unsigned type, meaning it can only hold zero or positive values.
+
+**********************************************************
+2. low level and high level languages :
+
+    low level languages:  Low-level programming languages are closer to the hardware 
+    and provide less abstraction from the machine’s architecture
+    ex: assembly, C
+
+    NOTE: C++ is under both low level and high level because it provides the features of both.
+
+    high level languages: : High-level programming languages are designed to be easy for humans to read and write.
+    ex: javscript, python , ruby
