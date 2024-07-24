@@ -43,8 +43,8 @@
         vector<int> arr{0,0,0};
         while(temp!=nullptr)
         {
-            arr[temp->data]++;
-            temp=temp->next;
+          arr[temp->data]++;
+          temp=temp->next;
         }
         temp=head;
         int i=0;
