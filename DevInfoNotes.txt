@@ -13,3 +13,8 @@ unsigned type, meaning it can only hold zero or positive values.
 
     high level languages: : High-level programming languages are designed to be easy for humans to read and write.
     ex: javscript, python , ruby
+
+*************************************************************
+
+3.In C++, a functor (or function object) is an object that can be used as if it were a function. It is created by overloading 
+the operator() in a class.
