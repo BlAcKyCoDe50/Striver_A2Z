@@ -4,7 +4,7 @@
 
 int minii( vector<int>&arr){
     int mini =arr[0];
-    for(int i=1;i<arr. size(); i++)
+    for(int i=1;i<arr.size(); i++)
         if(arr[i]<mini) mini = arr[i];
     return mini;
 }
@@ -33,7 +33,7 @@ return cnt;
 }
 main(){
 int n = 3;
-vector<int> arr = {3,4,-1};
+vector<int> arr = {1,2,4,3};
 // cout<<minii(arr)<<endl;
 cout<<fun(arr,n);
 
