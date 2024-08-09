@@ -24,12 +24,14 @@ void findSubarray(int start,vector<int>&ans,vector<int>&arr)
         vector<int>ans;
         findSubarray(0,ans,nums);
         sort(ans.begin(),ans.end());
-        long long  sum = 0;
-        for(int i=left-1;i<=right;i++)
-        {
-            (sum+=ans[i])%MOD;
-        }
-        return (int)sum;
+            long long  res = 0;
+            for(int i=left-1;i<right;i++)
+            {
+                res+=ans[i];
+            }
+            int maxi  = pow(10,9)+7;
+            res = res%maxi;
+            return res;
     }
 main(){
  

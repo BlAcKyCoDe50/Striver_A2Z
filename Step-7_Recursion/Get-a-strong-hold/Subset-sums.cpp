@@ -22,7 +22,6 @@
     }
 
 main(){
- 
 vector<int> arr = {5, 2, 1};
 
 vector<int>res = subsetsums(arr,arr.size());

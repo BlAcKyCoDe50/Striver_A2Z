@@ -41,7 +41,7 @@ public:
             {
                 if(grid[i][j]==value)
             {
-            if(i>0 && j> 0 ) sum+=grid[i-1][j-1]); //top left
+            if(i>0 && j> 0 ) sum+=grid[i-1][j-1]; //top left
             if(i>0 && j< col-1) sum+=(grid[i-1][j+1]); 
             if(j>0 && i<row-1) sum+=(grid[i+1][j-1]);
             if(i<row-1 && j<col-1) sum+=(grid[i+1][j+1]);
