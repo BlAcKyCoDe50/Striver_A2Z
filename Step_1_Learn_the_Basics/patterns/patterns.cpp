@@ -111,12 +111,12 @@ main(){
 
  int n;
  cin>>n;
-//  pattern_1(n);
-//  pattern_2(n);
-	// pattern_3(n);
-	// pattern_4(n);
-	// pattern_6(n);
-	// pattern_7(n);
+ pattern_1(n);
+ pattern_2(n);
+	pattern_3(n);
+	pattern_4(n);
+	pattern_6(n);
+	pattern_7(n);
  
 	pattern_8(n);
 return 0;
