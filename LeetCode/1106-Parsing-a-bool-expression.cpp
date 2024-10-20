@@ -34,6 +34,8 @@ Explanation:
 First, evaluate &(f,t) --> (false AND true) --> false --> f. The expression is now "!(f)".
 Then, evaluate !(f) --> NOT false --> true. We return true.
 
+NOTE : Easy problem just do the dry run of the code and you will get the answer.
+
 */
 
    #include<iostream>
