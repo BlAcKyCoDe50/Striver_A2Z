@@ -19,7 +19,7 @@
 
 main(){
  
-string str = "gfg";
-    generateStrings(str, 0 , 0);
+string str = "ab";
+generateStrings(str, 0 , 0);
  return 0;
  }
